@@ -1,0 +1,14 @@
+public class cetakangkamundur{
+public static void cetakangkamundur(int n){
+    if ( n < 0){
+        return;
+    }
+    System.out.println(n);
+    cetakangkamundur(n - 1);
+}
+public static void main (String[] args){
+    int angka = 5;
+    System.out.println("Cetak angka mundur dari " + angka + " :");
+    cetakangkamundur(angka);
+}
+}
