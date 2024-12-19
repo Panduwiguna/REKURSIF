@@ -1,0 +1,19 @@
+public class cari_nilai_maksimum_array {
+
+    public static int findMax(int[] arr, int n) { //BUAT NYARI NILSI MSKDIMUM
+       
+        if (n == 1) {
+            return arr[0]; //KALO N NYA 1 MAKA ITU NILAI MAKSIMUMNYA
+        }
+        int maxInRest = findMax(arr, n - 1);
+        
+        return Math.max(arr[n - 1], maxInRest);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 7, 2, 8, 9, 3};
+        int n = arr.length;
+        int max = findMax(arr, n);
+        System.out.println("Nilai maksimumnya adalah: " + max);
+    }
+}
