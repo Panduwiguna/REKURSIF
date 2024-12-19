@@ -1,0 +1,31 @@
+public class sum_of_three {
+    public static int[] SumofThree(int n, int a, int b, int c){
+        if ( n <= 3){ //KALO N KURANG DARI SAMA DENGAN 3, MAKA KEMBALIKAN ARRAY YANG SESUAI
+            return new int[0]; //JIKA JUMLAH ELEMEN NEGATIF ATAU 0
+        }
+
+        int[] sequence = new int[n]; //BUAT NYIMPEN HASIL DERETNYA
+
+        if (n >= 1) sequence[0] = a;
+        if (n >= 2) sequence[1] = b;
+        if (n >= 3) sequence[2] = c;
+
+        for (int i = 3; i<n; i++){
+            sequence[i] = sequence[i-1] + sequence[i-2] + sequence[i-3];
+        }
+        return sequence;
+    }
+    public static void main (String[] args){
+        int n = 5;  //JUMLAH ELEMEN YG ADA DI DERET
+        int a = 1;  // ANGKA PERTAMA
+        int b = 1; // ANGKA KEDUA
+        int c = 1;  //ANGKA KETIGA
+
+        int[] result = SumofThree(n, a, b, c); //MEMANGGIL FUNGSI SUMOFTHREE
+
+        System.out.print("DERET SUM OF THREE : ");
+        for ( int i : result){
+            System.out.print(i + " ");
+        }
+    } 
+}
