@@ -1,0 +1,23 @@
+public class mencari_elemen_array {
+    public static boolean contains(int[]arr, int n, int target){
+        if (n == 0) {  //KALO SI N NYA 0 MAKA FUNGSI INI BERHENTI BEKERJA
+            return false;
+        }
+        
+        if (arr[n - 1] == target) {  //KALO INI SESUAI TARGET MAKA FUNGSI AKAN TRUE
+            return true;
+        }
+        
+        
+        return contains(arr, n - 1, target); //MEMERIKSA ELEMEN SEBELUMNYA
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 6, 9, 2, 8, 12, 45, 76, 90};   //INI DAFTAR ANGKA 
+        int target = 8; //YANG DICARI ANGKA 8
+
+        // MANGGIL FUNGSI CONTAINS
+        boolean result = contains(arr, arr.length, target);
+        System.out.println("Apakah array mengandung " + target + " ? " + result);
+    }
+    }
